@@ -1,0 +1,13 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: contoso-air-demo
+  labels:
+    app.kubernetes.io/name: contoso-air-demo
+    app.kubernetes.io/part-of: contoso-air-demo-project
+    kubernetes.azure.com/generator: devhub
+spec:
+  maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: contoso-air-demo
